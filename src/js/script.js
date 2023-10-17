@@ -3,20 +3,15 @@ function init() {
     gradientHover();
     anchorScroll();
 
-    const section = document.querySelectorAll('section');
     const burger = document.querySelector('.burger-menu');
-    const projectHeadline = document.querySelector('.projects-cards-container .section-headline');
+    const headline = document.querySelectorAll('section .section-headline');
 
     window.addEventListener('scroll', function(event) {
-        section.forEach(element => {
+        headline.forEach(element => {
             if (isInViewport(element)) {
                 element.classList.add("inView");
             }
         });
-
-        if (isInViewport(projectHeadline)) {
-            document.getElementById('projects').classList.add("inView");
-        }
 
         let elem = document.querySelector('.footer-elem');
         if(isInViewport(elem)) {

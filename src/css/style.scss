@@ -28,6 +28,23 @@ body {
     background: $orange;
 }
 
+.bg-noise {
+    position: fixed;
+    top: -50%;
+    left: -50%;
+    right: -50%;
+    bottom: -50%;
+    width: 200%;
+    height: 200vh;
+    background: transparent url('../imgs/noise-transparent.png') repeat 0 0;
+    background-repeat: repeat;
+    animation: bg-animation .2s infinite;
+    opacity: .6;
+    visibility: visible;
+    z-index: 100;
+    pointer-events: none;
+}
+
 .glass-bg {
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
     backdrop-filter: blur(3.6px);
@@ -158,23 +175,6 @@ nav {
     }
 }
 
-.bg-noise {
-    position: fixed;
-    top: -50%;
-    left: -50%;
-    right: -50%;
-    bottom: -50%;
-    width: 200%;
-    height: 200vh;
-    background: transparent url('../imgs/noise-transparent.png') repeat 0 0;
-    background-repeat: repeat;
-    animation: bg-animation .2s infinite;
-    opacity: .9;
-    visibility: visible;
-    z-index: 100;
-    pointer-events: none;
-}
-
 @keyframes bg-animation {
     0% { transform: translate(0,0) }
     10% { transform: translate(-5%,-5%) }
@@ -246,23 +246,22 @@ section:not(#home) {
         }        
     } 
 
-    &.inView {
-        .section-headline > span {
-            position: relative;
+    .inView.section-headline > span {
+        position: relative;
 
-            &:after {
-                content: '';
-                height: 5px;
-                width: 100%;
-                background-color: $orange;
-                transition: $transition1;
-                position: absolute;
-                left: 0;
-                bottom: -5px;
-                border-radius: 5px;
-            }
+        &:after {
+            content: '';
+            height: 5px;
+            width: 100%;
+            background-color: $orange;
+            transition: $transition1;
+            position: absolute;
+            left: 0;
+            bottom: -5px;
+            border-radius: 5px;
         }
     }
+
 }
 
 // projects
@@ -325,6 +324,7 @@ section:not(#home) {
         margin-right: 5px;
         background: rgba(255,255,255, 0.02);
         margin-top: 10px;
+        box-shadow: rgba(0,0,0,0.2) 0px 2px 8px 0px;
 
         &:hover {
             transform: scale(1.1);
