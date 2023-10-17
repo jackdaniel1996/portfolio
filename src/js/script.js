@@ -5,6 +5,7 @@ function init() {
 
     const section = document.querySelectorAll('section');
     const burger = document.querySelector('.burger-menu');
+    const projectHeadline = document.querySelector('.projects-cards-container .section-headline');
 
     window.addEventListener('scroll', function(event) {
         section.forEach(element => {
@@ -12,6 +13,10 @@ function init() {
                 element.classList.add("inView");
             }
         });
+
+        if (isInViewport(projectHeadline)) {
+            document.getElementById('projects').classList.add("inView");
+        }
 
         let elem = document.querySelector('.footer-elem');
         if(isInViewport(elem)) {

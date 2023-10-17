@@ -251,50 +251,64 @@ section:not(#home).inView .section-headline > span:after {
   border-radius: 5px;
 }
 
-@media (min-width: 1400px) {
-  .about-me-container .lines-bg > svg {
-    transform: scale(2) rotate(55deg);
-    transform-origin: bottom;
-  }
+.projects-cards-container {
+  width: calc(100% + 80px);
+  margin-left: -40px;
 }
-.projects-container .section-headline {
-  margin-bottom: 50px;
+.projects-cards-container #cards {
+  list-style: none;
+  padding-left: 0;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(4, 87vh);
+  gap: 4vw;
+  padding-bottom: 240px;
+  margin-bottom: 4vw;
 }
-.projects-container .card-container {
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  gap: 0.5rem;
-  width: 100%;
-}
-.projects-container .card-container .card {
-  width: calc(33.333% - 0.5rem);
-  min-width: 20rem;
-  height: 30rem;
-  border-radius: 0.5rem;
+.projects-cards-container .card-body {
+  box-sizing: border-box;
+  padding: 30px;
+  border-radius: 30px;
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 8px 0px;
+  height: 87vh;
   display: flex;
   justify-content: center;
   align-items: center;
-  border: none;
-  overflow: hidden;
-  position: relative;
-  transition: all 0.15s ease-in-out;
-  transform: scale(1);
+  transition: all 0.5s;
 }
-.projects-container .card-container .card:hover {
-  transform: scale(0.97);
+
+#card1 {
+  --index: 1;
 }
-.projects-container .card-container .card .card-content {
-  background-color: #1c1c1c;
-  border-radius: inherit;
-  transition: all 0.25s;
-  height: calc(100% - 0.2rem);
-  width: calc(100% - 0.2rem);
-  border-radius: 0.5rem;
-  position: relative;
-  z-index: 4;
+#card1 .card-body {
+  background-color: rgb(5, 5, 5);
+}
+
+#card2 {
+  --index: 2;
+}
+#card2 .card-body {
+  background-color: rgb(10, 10, 10);
+}
+
+#card3 {
+  --index: 3;
+}
+#card3 .card-body {
+  background-color: rgb(15, 15, 15);
+}
+
+#card4 {
+  --index: 4;
+}
+#card4 .card-body {
+  background-color: rgb(20, 20, 20);
+}
+
+.card {
+  position: sticky;
+  top: 0;
+  padding-top: calc(var(--index) * 60px);
 }
 
 .skill-list > div {
@@ -349,6 +363,9 @@ section:not(#home).inView .section-headline > span:after {
 }
 
 @media (max-width: 768px) {
+  .bg-wrapper {
+    justify-content: center;
+  }
   nav {
     padding: 10px 15px;
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
@@ -410,6 +427,7 @@ section:not(#home).inView .section-headline > span:after {
     top: 0;
     opacity: 0;
     transition: all 0.5s ease-in-out;
+    pointer-events: none;
   }
   .mobile-nav .background-blur {
     position: absolute;
@@ -422,6 +440,7 @@ section:not(#home).inView .section-headline > span:after {
             backdrop-filter: blur(3.6px);
     -webkit-mask-image: linear-gradient(-90deg, rgb(0, 0, 0) 55%, rgba(0, 0, 0, 0.8) 70%, rgba(0, 0, 0, 0) 100%);
     z-index: -1;
+    pointer-events: none;
   }
   .mobile-nav a {
     color: #eaeaea;
@@ -470,6 +489,7 @@ section:not(#home).inView .section-headline > span:after {
   }
   .open .mobile-nav {
     opacity: 1;
+    pointer-events: all;
   }
   @keyframes burgerBg {
     0% {
@@ -509,11 +529,12 @@ section:not(#home).inView .section-headline > span:after {
   .about-me-container > div:first-child {
     padding-bottom: 20px;
   }
-  .lines-bg {
-    display: none;
+  .projects-cards-container {
+    width: 100%;
+    margin: 0;
   }
   .footer-bg-block {
-    width: 100%;
-    left: 0;
+    width: 80%;
+    left: 10%;
   }
 }/*# sourceMappingURL=style.css.map */

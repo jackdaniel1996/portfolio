@@ -6,6 +6,12 @@ $lightBlue: #709ab0;
 $headlineFont:  'Poppins', sans-serif;
 $textFont: 'Lora', serif;
 $transition1: all 0.5s ease-in-out;
+// projects cards:
+$cards: 4;
+$cardHeight: 87vh;
+$cardTopPadding: 60px;
+$cardMargin: 4vw;
+
 
 body {
     margin: 0;
@@ -259,60 +265,52 @@ section:not(#home) {
     }
 }
 
-@media (min-width: 1400px) {
-    .about-me-container .lines-bg > svg{
-        transform: scale(2) rotate(55deg);
-        transform-origin: bottom;
+// projects
+.projects-cards-container {
+	width: calc(100% + 80px);
+	margin-left: -40px;
+
+    #cards {
+        list-style: none;
+        padding-left: 0;
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat($cards, $cardHeight);
+        gap: $cardMargin;
+        padding-bottom: calc($cards * $cardTopPadding);
+        margin-bottom: $cardMargin;
+    }
+
+    .card-body {
+        box-sizing: border-box;
+        padding: 30px;
+        border-radius: 30px;
+        box-shadow: rgba(0,0,0,0.2) 0px 2px 8px 0px;
+        height: $cardHeight;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: all 0.5s;
     }
 }
 
-// projects
-.projects-container {
+@for $i from 1 through 4 {
+    #card#{$i} {
+        --index: #{$i};
 
-    .section-headline {
-        margin-bottom: 50px;
-    }
-
-    .card-container {
-        display: flex;
-        flex-wrap: wrap;
-        flex-direction: row;
-        justify-content: center;
-        align-items: center;
-        gap: 0.5rem;
-        width: 100%;
-
-        .card {            
-            width: calc(33.333% - 0.5rem);
-            min-width: 20rem;
-            height: 30rem;
-            border-radius: 0.5rem;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            border: none;
-            overflow: hidden;
-            position: relative;
-            transition: all 0.15s ease-in-out;
-            transform: scale(1);
-
-            &:hover {
-            transform: scale(0.97);
-            }
-
-            .card-content {
-                background-color: #1c1c1c;
-                border-radius: inherit;
-                transition: all 0.25s;
-                height: calc(100% - 0.2rem);
-                width: calc(100% - 0.2rem);
-                border-radius: 0.5rem;
-                position: relative;
-                z-index: 4;
-            } 
+        $brightness: 2% * $i;
+        .card-body {
+            background-color: rgb($brightness, $brightness, $brightness);
         }
     }
 }
+
+.card {
+	position: sticky;
+	top: 0;
+	padding-top: calc(var(--index) * $cardTopPadding);
+}
+
 
 // skills
 .skill-list {
@@ -374,6 +372,12 @@ section:not(#home) {
 
 // Mobile
 @media (max-width: 768px) {
+    // landingpage
+    .bg-wrapper {
+        justify-content: center;
+    }
+
+   // navigation
     nav {
         padding: 10px 15px;
         box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
@@ -435,6 +439,7 @@ section:not(#home) {
         top: 0;
         opacity: 0;
         transition: $transition1;
+        pointer-events: none;
 
         .background-blur {
             position: absolute;
@@ -446,6 +451,7 @@ section:not(#home) {
             backdrop-filter: blur(3.6px);
             -webkit-mask-image: linear-gradient(-90deg, rgb(0, 0, 0) 55%, rgba(0, 0, 0, 0.8) 70%, rgba(0, 0, 0, 0) 100%);
             z-index: -1;
+            pointer-events: none;
         }
 
         a {
@@ -506,6 +512,7 @@ section:not(#home) {
 
         .mobile-nav{
             opacity: 1;
+            pointer-events: all;
         }
     }
 
@@ -553,11 +560,17 @@ section:not(#home) {
             }
         }
     }
-
-    .lines-bg {display: none;}
-
-    .footer-bg-block {
+    
+    // projects
+    .projects-cards-container {
         width: 100%;
-        left: 0;
+        margin: 0;
+    }
+
+
+    // footer/contact
+    .footer-bg-block {
+        width: 80%;
+        left: 10%;
     }
 }
