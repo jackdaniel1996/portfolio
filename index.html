@@ -7,11 +7,16 @@
     <title>Portfolio v3</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;0,700;1,400&family=Poppins:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;0,700;1,400&family=Raleway:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
     <link rel="stylesheet" href="src/css/style.css">
+    <link rel="stylesheet" href="src/css/lightMode.css">
     <script src="src/js/script.js"></script>
 </head>
-<body>
+<body class="">
+    <div class="bg-noise"></div>
+    <div class="bg-dot-pattern"></div>
+    <div class="vignette"></div>
     <nav id="nav" class="hover-gradient">
         <div></div>
         <div>
@@ -79,6 +84,9 @@
             <a href="#projects">Projekte</a> 
             <a href="#skills">Skills</a> 
             <a href="#contact">Kontakt</a>  
+            <span class="material-symbols-outlined mode-toggle-icon">
+                light_mode
+            </span>
         </div>
         <div class="burger-menu">
             <span class="line"></span>
@@ -91,10 +99,12 @@
         <a href="#projects">Projekte</a> 
         <a href="#skills">Skills</a> 
         <a href="#contact">Kontakt</a>  
+        <a><span class="material-symbols-outlined mode-toggle-icon">
+            light_mode
+        </span></a>
         <div class="background-blur"></div>
-    </div>
-    <div class="bg-noise"></div>
-    <section id="home">        
+    </div>    
+    <section id="home">      
         <div class="bg-wrapper">
             <div class="landingpage-name-font">
                 <div class="light">Daniel Klein</div> 
@@ -151,6 +161,7 @@
             <div class="glass-bg">HTML</div>
             <div class="glass-bg">CSS</div>
             <div class="glass-bg">SCSS</div>
+            <div class="glass-bg">PHP*</div>
             <div class="glass-bg">JS</div>
             <div class="glass-bg">jQuery</div>
             <div class="glass-bg">Tailwind</div>

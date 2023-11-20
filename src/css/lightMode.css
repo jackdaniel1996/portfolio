@@ -1,0 +1,58 @@
+body.lightMode {
+  background-color: #fefefe;
+}
+body.lightMode .bg-dot-pattern {
+  background-image: radial-gradient(#000 0.95px, rgba(0, 0, 0, 0) 0.95px);
+}
+body.lightMode .vignette {
+  box-shadow: 0 0 200px rgba(0, 0, 0, 0.2) inset;
+}
+body.lightMode .landingpage-name-font,
+body.lightMode nav > div:nth-child(3) a,
+body.lightMode section:not(#home):not(#contact-section) .section-headline,
+body.lightMode .about-me-container,
+body.lightMode .mobile-nav a {
+  color: #1c1c1c;
+}
+body.lightMode nav .burger-menu .line {
+  background: #1c1c1c;
+}
+body.lightMode nav .logo {
+  fill: #1c1c1c;
+}
+body.lightMode nav .mode-toggle-icon {
+  color: #1c1c1c;
+}
+body.lightMode .mobile-nav .mode-toggle-icon {
+  color: #1c1c1c;
+}
+body.lightMode .bg-wrapper .bg-image {
+  opacity: 0.9;
+}
+body.lightMode .skill-list > div {
+  background: rgb(0, 0, 0);
+}
+body.lightMode #card1 {
+  --index: 1;
+}
+body.lightMode #card1 .card-body {
+  background-color: rgb(64, 64, 64);
+}
+body.lightMode #card2 {
+  --index: 2;
+}
+body.lightMode #card2 .card-body {
+  background-color: rgb(128, 128, 128);
+}
+body.lightMode #card3 {
+  --index: 3;
+}
+body.lightMode #card3 .card-body {
+  background-color: rgb(191, 191, 191);
+}
+body.lightMode #card4 {
+  --index: 4;
+}
+body.lightMode #card4 .card-body {
+  background-color: rgb(255, 255, 255);
+}/*# sourceMappingURL=lightMode.css.map */

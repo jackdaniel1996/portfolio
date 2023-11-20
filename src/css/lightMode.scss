@@ -1,0 +1,59 @@
+$black: #1c1c1c;
+
+body.lightMode {
+    background-color: #fefefe;
+
+    .bg-dot-pattern {
+        background-image: radial-gradient(#000 0.95px, rgba(0, 0, 0, 0) 0.95px);
+    }
+
+    .vignette {
+        box-shadow: 0 0 200px rgba(0, 0, 0, 0.2) inset;
+    }
+
+    // fonts
+    .landingpage-name-font,
+    nav>div:nth-child(3) a,
+    section:not(#home):not(#contact-section) .section-headline,
+    .about-me-container,
+    .mobile-nav a {
+        color: $black;
+    }
+
+    // nav
+    nav {
+        .burger-menu .line {
+            background: $black;
+        }
+
+        .logo {
+            fill: $black;
+        }
+
+        .mode-toggle-icon{color: $black;}
+    }
+
+    .mobile-nav .mode-toggle-icon {
+        color: $black;
+    }
+
+    .bg-wrapper .bg-image {
+        opacity: 0.9;
+    }
+
+    .skill-list>div {
+        background: rgba(0, 0, 0, 1);
+    }
+
+    @for $i from 1 through 4 {
+        #card#{$i} {
+            --index: #{$i};
+
+            $brightness: 25% * $i;
+
+            .card-body {
+                background-color: rgb($brightness, $brightness, $brightness);
+            }
+        }
+    }
+}

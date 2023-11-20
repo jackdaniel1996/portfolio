@@ -5,6 +5,7 @@ function init() {
 
     const burger = document.querySelector('.burger-menu');
     const headline = document.querySelectorAll('section .section-headline');
+    const modeToggle = document.querySelectorAll('.mode-toggle-icon');
 
     window.addEventListener('scroll', function(event) {
         headline.forEach(element => {
@@ -22,6 +23,10 @@ function init() {
     });
 
     burger.addEventListener('click', toggleMobileNav);
+    
+    modeToggle.forEach(function (elem) {
+        elem.addEventListener('click', toggleMode);
+    });    
 }
 
 function anchorScroll() {  
@@ -95,5 +100,18 @@ function toggleMobileNav() {
             const action = isOpen ? 'remove' : 'add';
             elem.classList[action]('in');
         }, i * delay);
+    });
+}
+
+function toggleMode() {
+    const body = document.body;
+    const modeToggle = document.querySelectorAll('.mode-toggle-icon');
+    const isLightMode = body.classList.contains('lightMode');
+    const action = isLightMode ? 'remove' : 'add';
+    const mode = !isLightMode ? 'dark_mode' : 'light_mode';
+
+    modeToggle.forEach(function (elem) {
+        body.classList[action]('lightMode');
+        elem.innerHTML = mode;        
     });
 }

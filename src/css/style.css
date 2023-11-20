@@ -2,6 +2,7 @@ body {
   margin: 0;
   background-color: #191919;
   position: relative;
+  transition: all 0.5s ease-in-out;
 }
 
 .light {
@@ -43,6 +44,31 @@ body {
   pointer-events: none;
 }
 
+.bg-dot-pattern {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: -1;
+  opacity: 0.1;
+  background-image: radial-gradient(#FFF 0.95px, rgba(0, 0, 0, 0) 0.95px);
+  background-size: 25px 25px;
+}
+
+.vignette {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  box-shadow: 0 0 200px rgba(0, 0, 0, 0.6) inset;
+  z-index: 10;
+  pointer-events: none;
+  transition: all 0.5s ease-in-out;
+}
+
 .glass-bg {
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
   backdrop-filter: blur(3.6px);
@@ -73,9 +99,10 @@ body {
 
 .text-block {
   font-size: 13pt;
-  font-family: "Poppins", sans-serif;
+  font-family: "Raleway", sans-serif;
   line-height: 18pt;
   letter-spacing: 0.5px;
+  transition: all 0.5s ease-in-out;
 }
 
 nav {
@@ -88,7 +115,7 @@ nav {
   z-index: 500;
   transition: all 0.5s ease-in-out;
   border-bottom: 1px solid rgba(255, 255, 255, 0);
-  font-family: "Poppins", sans-serif;
+  font-family: "Raleway", sans-serif;
 }
 nav > div {
   width: 33%;
@@ -98,6 +125,11 @@ nav > div a[href="#home"] {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+nav > div:nth-child(3) {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
 }
 nav > div:nth-child(3) a {
   padding: 0 10px;
@@ -122,6 +154,12 @@ nav .logo:hover {
 }
 nav .burger-menu {
   display: none;
+}
+nav .mode-toggle-icon {
+  color: #eaeaea;
+  cursor: pointer;
+  transition: all 0.5s ease-in-out;
+  font-size: 16pt;
 }
 
 .mobile-nav {
@@ -186,11 +224,12 @@ nav .burger-menu {
   }
 }
 .landingpage-name-font {
-  font-family: "Poppins", sans-serif;
+  font-family: "Raleway", sans-serif;
   color: #eaeaea;
   font-size: clamp(2rem, 4vw, 5rem);
   line-height: 100%;
   padding-left: 30px;
+  transition: all 0.5s ease-in-out;
 }
 
 @media (max-width: 850px) {
@@ -228,8 +267,9 @@ section:not(#home) .section-headline {
   white-space: nowrap;
   color: #eaeaea;
   padding-left: 10px;
-  font-family: "Poppins", sans-serif;
+  font-family: "Raleway", sans-serif;
   margin-bottom: 50px;
+  transition: all 0.5s ease-in-out;
 }
 section:not(#home) .section-headline > span:after {
   content: "";
@@ -281,28 +321,28 @@ section:not(#home) .inView.section-headline > span:after {
   --index: 1;
 }
 #card1 .card-body {
-  background-color: rgb(5, 5, 5);
+  background-color: rgb(13, 13, 13);
 }
 
 #card2 {
   --index: 2;
 }
 #card2 .card-body {
-  background-color: rgb(10, 10, 10);
+  background-color: rgb(26, 26, 26);
 }
 
 #card3 {
   --index: 3;
 }
 #card3 .card-body {
-  background-color: rgb(15, 15, 15);
+  background-color: rgb(38, 38, 38);
 }
 
 #card4 {
   --index: 4;
 }
 #card4 .card-body {
-  background-color: rgb(20, 20, 20);
+  background-color: rgb(51, 51, 51);
 }
 
 .card {
@@ -317,7 +357,7 @@ section:not(#home) .inView.section-headline > span:after {
   padding: 5px 20px;
   border-radius: 20px;
   border: 1px solid rgba(255, 255, 255, 0.06);
-  font-family: "Poppins", sans-serif;
+  font-family: "Raleway", sans-serif;
   font-weight: 500;
   margin-right: 5px;
   background: rgba(255, 255, 255, 0.02);
@@ -367,15 +407,13 @@ section:not(#home) .inView.section-headline > span:after {
   .bg-wrapper {
     justify-content: center;
   }
+  .vignette {
+    box-shadow: 0 0 200px rgba(0, 0, 0, 0.2) inset;
+  }
   nav {
     padding: 10px 15px;
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-    backdrop-filter: blur(3.6px);
-    -webkit-backdrop-filter: blur(3.6px);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
     width: 100%;
     box-sizing: border-box;
-    transition: none !important;
   }
   nav > div {
     width: 50%;
@@ -387,6 +425,8 @@ section:not(#home) .inView.section-headline > span:after {
   nav .burger-menu {
     display: block;
     height: 20px;
+    position: absolute;
+    right: 15px;
   }
   nav .burger-menu .line {
     position: absolute;
@@ -440,13 +480,14 @@ section:not(#home) .inView.section-headline > span:after {
     -webkit-backdrop-filter: blur(3.6px);
             backdrop-filter: blur(3.6px);
     -webkit-mask-image: linear-gradient(-90deg, rgb(0, 0, 0) 55%, rgba(0, 0, 0, 0.8) 70%, rgba(0, 0, 0, 0) 100%);
+    mask-image: linear-gradient(-90deg, rgb(0, 0, 0) 55%, rgba(0, 0, 0, 0.8) 70%, rgba(0, 0, 0, 0) 100%);
     z-index: -1;
     pointer-events: none;
   }
   .mobile-nav a {
     color: #eaeaea;
     text-decoration: none;
-    font-family: "Poppins", sans-serif;
+    font-family: "Raleway", sans-serif;
     font-size: 26pt;
     font-weight: 700;
     line-height: 200%;
@@ -459,6 +500,11 @@ section:not(#home) .inView.section-headline > span:after {
     transition: all 0.5s ease-in-out;
     opacity: 1;
     transform: rotateY(0deg);
+  }
+  .mobile-nav .mode-toggle-icon {
+    color: #eaeaea;
+    font-size: 28pt;
+    margin-top: 15px;
   }
   .open nav {
     box-shadow: none;
@@ -534,8 +580,12 @@ section:not(#home) .inView.section-headline > span:after {
     width: 100%;
     margin: 0;
   }
+  .projects-cards-container .card-body {
+    width: 90vw;
+    margin-left: -5%;
+  }
   .footer-bg-block {
-    width: 80%;
-    left: 10%;
+    width: 90%;
+    left: 5%;
   }
 }/*# sourceMappingURL=style.css.map */
