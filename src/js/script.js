@@ -6,6 +6,7 @@ function init() {
     const burger = document.querySelector('.burger-menu');
     const headline = document.querySelectorAll('section .section-headline');
     const modeToggle = document.querySelectorAll('.mode-toggle-icon');
+    const mobileNavElems = document.querySelectorAll('.mobile-nav a');
 
     window.addEventListener('scroll', function(event) {
         headline.forEach(element => {
@@ -22,7 +23,10 @@ function init() {
         }
     });
 
-    burger.addEventListener('click', toggleMobileNav);
+    burger.addEventListener('click', toggleMobileNav);    
+    mobileNavElems.forEach(function (elem) {
+        elem.addEventListener('click', toggleMobileNav);
+    });
     
     modeToggle.forEach(function (elem) {
         elem.addEventListener('click', toggleMode);
