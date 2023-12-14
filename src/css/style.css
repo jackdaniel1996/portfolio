@@ -53,7 +53,7 @@ body {
   height: 100vh;
   z-index: -1;
   opacity: 0.1;
-  background-image: radial-gradient(#FFF 0.95px, rgba(0, 0, 0, 0) 0.95px);
+  background-image: radial-gradient(#fff 0.95px, rgba(0, 0, 0, 0) 0.95px);
   background-size: 25px 25px;
 }
 
@@ -116,6 +116,8 @@ nav {
   transition: all 0.5s ease-in-out;
   border-bottom: 1px solid rgba(255, 255, 255, 0);
   font-family: "Raleway", sans-serif;
+  font-size: 13pt;
+  font-weight: 500;
 }
 nav > div {
   width: 33%;
@@ -161,13 +163,17 @@ nav .mode-toggle-icon {
   transition: all 0.5s ease-in-out;
   font-size: 16pt;
 }
+nav .mode-toggle-icon:hover {
+  color: #ff7152;
+  transition: all 0.5s ease-in-out;
+}
 
 .mobile-nav {
   display: none;
 }
 
 .bg-wrapper {
-  margin-top: -55px;
+  margin-top: -56px;
   width: 100%;
   height: 100vh;
   top: 0;
@@ -177,17 +183,26 @@ nav .mode-toggle-icon {
   align-items: flex-start;
   justify-content: flex-end;
   flex-direction: column;
+  position: relative;
 }
 .bg-wrapper .bg-image {
-  background: url(../imgs/blobbed.png);
-  height: 65%;
+  background: url(../imgs/gradient.png);
+  height: 100%;
   width: 100%;
   background-repeat: no-repeat;
   background-size: contain;
-  background-position: left bottom;
-  opacity: 0.7;
+  background-position: top left;
+  top: 0;
+  left: 0;
+  position: absolute;
+  opacity: 0.9;
 }
 
+@media (max-width: 2000px) {
+  .bg-wrapper .bg-image {
+    background-size: cover;
+  }
+}
 @keyframes bg-animation {
   0% {
     transform: translate(0, 0);
@@ -226,18 +241,22 @@ nav .mode-toggle-icon {
 .landingpage-name-font {
   font-family: "Raleway", sans-serif;
   color: #eaeaea;
-  font-size: clamp(2rem, 4vw, 5rem);
+  font-size: clamp(4rem, 6vw, 7rem);
   line-height: 100%;
   padding-left: 30px;
   transition: all 0.5s ease-in-out;
+  position: absolute;
+  top: 50%;
+  transform: translate(0, -50%);
+  z-index: 1;
+  mix-blend-mode: overlay;
+}
+.landingpage-name-font div:last-child {
+  -webkit-text-stroke-width: 2px;
+  -webkit-text-stroke-color: #eaeaea;
+  color: rgba(0, 0, 0, 0);
 }
 
-@media (max-width: 850px) {
-  .bg-wrapper .bg-image {
-    background-size: cover;
-    height: 50%;
-  }
-}
 .about-me-container {
   display: flex;
   flex-direction: row;
@@ -371,6 +390,13 @@ section:not(#home) .inView.section-headline > span:after {
   background: rgba(255, 255, 255, 0.1);
 }
 
+.info-font-small {
+  font-family: "Raleway", sans-serif;
+  font-size: 9pt;
+  color: #eaeaea;
+  margin-top: 50px;
+}
+
 .footer-bg-block {
   width: calc(80% + 80px);
   height: 100vh;
@@ -406,6 +432,11 @@ section:not(#home) .inView.section-headline > span:after {
 @media (max-width: 768px) {
   .bg-wrapper {
     justify-content: center;
+  }
+  .bg-wrapper .bg-image {
+    background: url(../imgs/gradient-mobile.png);
+    background-repeat: no-repeat;
+    background-size: cover;
   }
   .vignette {
     box-shadow: 0 0 200px rgba(0, 0, 0, 0.2) inset;

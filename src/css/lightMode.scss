@@ -1,59 +1,67 @@
-$black: #1c1c1c;
+@import "variables.scss";
 
 body.lightMode {
-    background-color: #fefefe;
+  background-color: #fefefe;
 
-    .bg-dot-pattern {
-        background-image: radial-gradient(#000 0.95px, rgba(0, 0, 0, 0) 0.95px);
+  .bg-dot-pattern {
+    background-image: radial-gradient(#000 0.95px, rgba(0, 0, 0, 0) 0.95px);
+  }
+
+  .vignette {
+    box-shadow: 0 0 200px rgba(0, 0, 0, 0.2) inset;
+  }
+
+  // fonts
+  section:not(#home):not(#contact-section) .section-headline,
+  .about-me-container,
+  .mobile-nav a,
+  .info-font-small {
+    color: $black;
+  }
+
+  // nav
+  nav {
+    .burger-menu .line {
+      background: $black;
     }
 
-    .vignette {
-        box-shadow: 0 0 200px rgba(0, 0, 0, 0.2) inset;
+    .logo {
+      fill: $black;
+
+      &:hover {
+        fill: $orange;
+        transition: $transition1;
+      }
     }
 
-    // fonts
-    .landingpage-name-font,
-    nav>div:nth-child(3) a,
-    section:not(#home):not(#contact-section) .section-headline,
-    .about-me-container,
-    .mobile-nav a {
-        color: $black;
+    .mode-toggle-icon,
+    > div:nth-child(3) a {
+      color: $black;
+
+      &:hover {
+        color: $orange;
+        transition: $transition1;
+      }
     }
+  }
 
-    // nav
-    nav {
-        .burger-menu .line {
-            background: $black;
-        }
+  .mobile-nav .mode-toggle-icon {
+    color: $black;
+  }
 
-        .logo {
-            fill: $black;
-        }
+  .skill-list > div {
+    background: rgba(0, 0, 0, 1);
+  }
 
-        .mode-toggle-icon{color: $black;}
+  @for $i from 1 through 4 {
+    #card#{$i} {
+      --index: #{$i};
+
+      $brightness: 25% * $i;
+
+      .card-body {
+        background-color: rgb($brightness, $brightness, $brightness);
+      }
     }
-
-    .mobile-nav .mode-toggle-icon {
-        color: $black;
-    }
-
-    .bg-wrapper .bg-image {
-        opacity: 0.9;
-    }
-
-    .skill-list>div {
-        background: rgba(0, 0, 0, 1);
-    }
-
-    @for $i from 1 through 4 {
-        #card#{$i} {
-            --index: #{$i};
-
-            $brightness: 25% * $i;
-
-            .card-body {
-                background-color: rgb($brightness, $brightness, $brightness);
-            }
-        }
-    }
+  }
 }

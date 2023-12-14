@@ -7,11 +7,10 @@ body.lightMode .bg-dot-pattern {
 body.lightMode .vignette {
   box-shadow: 0 0 200px rgba(0, 0, 0, 0.2) inset;
 }
-body.lightMode .landingpage-name-font,
-body.lightMode nav > div:nth-child(3) a,
 body.lightMode section:not(#home):not(#contact-section) .section-headline,
 body.lightMode .about-me-container,
-body.lightMode .mobile-nav a {
+body.lightMode .mobile-nav a,
+body.lightMode .info-font-small {
   color: #1c1c1c;
 }
 body.lightMode nav .burger-menu .line {
@@ -20,14 +19,21 @@ body.lightMode nav .burger-menu .line {
 body.lightMode nav .logo {
   fill: #1c1c1c;
 }
-body.lightMode nav .mode-toggle-icon {
+body.lightMode nav .logo:hover {
+  fill: #ff7152;
+  transition: all 0.5s ease-in-out;
+}
+body.lightMode nav .mode-toggle-icon,
+body.lightMode nav > div:nth-child(3) a {
   color: #1c1c1c;
+}
+body.lightMode nav .mode-toggle-icon:hover,
+body.lightMode nav > div:nth-child(3) a:hover {
+  color: #ff7152;
+  transition: all 0.5s ease-in-out;
 }
 body.lightMode .mobile-nav .mode-toggle-icon {
   color: #1c1c1c;
-}
-body.lightMode .bg-wrapper .bg-image {
-  opacity: 0.9;
 }
 body.lightMode .skill-list > div {
   background: rgb(0, 0, 0);
