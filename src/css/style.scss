@@ -470,6 +470,10 @@ section:not(#home) {
   .bg-wrapper {
     justify-content: center;
 
+    .landingpage-name-font {
+      padding: 0 20px;
+    }
+
     .bg-image {
       background: url(../imgs/gradient-mobile.png);
       background-repeat: no-repeat;

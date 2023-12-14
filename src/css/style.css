@@ -433,6 +433,9 @@ section:not(#home) .inView.section-headline > span:after {
   .bg-wrapper {
     justify-content: center;
   }
+  .bg-wrapper .landingpage-name-font {
+    padding: 0 20px;
+  }
   .bg-wrapper .bg-image {
     background: url(../imgs/gradient-mobile.png);
     background-repeat: no-repeat;
