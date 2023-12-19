@@ -3,6 +3,7 @@ body {
   background-color: #191919;
   position: relative;
   transition: all 0.5s ease-in-out;
+  overflow: hidden;
 }
 
 .light {
@@ -105,6 +106,113 @@ body {
   transition: all 0.5s ease-in-out;
 }
 
+.loading {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 1000;
+}
+.loading .loading-bg {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  background-color: #1c1c1c;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: 100%;
+}
+.loading .loader {
+  width: 65px;
+  aspect-ratio: 1;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+}
+.loading .loader:before,
+.loading .loader:after {
+  content: "";
+  position: absolute;
+  border-radius: 50px;
+  box-shadow: 0 0 0 3px inset #fff;
+  animation: l4 2.5s infinite;
+}
+.loading .loader:after {
+  animation-delay: -1.25s;
+  box-shadow: 0 0 0 3px inset #ff7152;
+}
+@keyframes kreisAnimation {
+  100% {
+    width: 0;
+    height: 0;
+  }
+}
+@keyframes l4 {
+  0% {
+    inset: 0 35px 35px 0;
+  }
+  12.5% {
+    inset: 0 35px 0 0;
+  }
+  25% {
+    inset: 35px 35px 0 0;
+  }
+  37.5% {
+    inset: 35px 0 0 0;
+  }
+  50% {
+    inset: 35px 0 0 35px;
+  }
+  62.5% {
+    inset: 0 0 0 35px;
+  }
+  75% {
+    inset: 0 0 35px 35px;
+  }
+  87.5% {
+    inset: 0 0 35px 0;
+  }
+  100% {
+    inset: 0 35px 35px 0;
+  }
+}
+.loading .loading-text {
+  content: "Lade...";
+  color: #eaeaea;
+  font-family: "Raleway", sans-serif;
+  font-size: 16pt;
+  top: 50%;
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-weight: 700;
+  margin-top: 60px;
+  z-index: 1;
+}
+.loading.done {
+  pointer-events: none;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+}
+.loading.done .loader,
+.loading.done .loading-text {
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+}
+.loading.done .loading-bg {
+  border-radius: 50%;
+  animation: kreisAnimation 0.5s ease-in-out forwards;
+}
+
+@keyframes rotate {
+  100% {
+    transform: rotate(360deg);
+  }
+}
 nav {
   padding: 10px;
   position: sticky;

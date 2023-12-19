@@ -1,67 +1,67 @@
 @import "variables.scss";
 
 body.lightMode {
-  background-color: #fefefe;
+    background-color: $whiteBg;
 
-  .bg-dot-pattern {
-    background-image: radial-gradient(#000 0.95px, rgba(0, 0, 0, 0) 0.95px);
-  }
-
-  .vignette {
-    box-shadow: 0 0 200px rgba(0, 0, 0, 0.2) inset;
-  }
-
-  // fonts
-  section:not(#home):not(#contact-section) .section-headline,
-  .about-me-container,
-  .mobile-nav a,
-  .info-font-small {
-    color: $black;
-  }
-
-  // nav
-  nav {
-    .burger-menu .line {
-      background: $black;
+    .bg-dot-pattern {
+        background-image: radial-gradient(#000 0.95px, rgba(0, 0, 0, 0) 0.95px);
     }
 
-    .logo {
-      fill: $black;
-
-      &:hover {
-        fill: $orange;
-        transition: $transition1;
-      }
+    .vignette {
+        box-shadow: 0 0 200px rgba(0, 0, 0, 0.2) inset;
     }
 
-    .mode-toggle-icon,
-    > div:nth-child(3) a {
-      color: $black;
-
-      &:hover {
-        color: $orange;
-        transition: $transition1;
-      }
+    // fonts
+    section:not(#home):not(#contact-section) .section-headline,
+    .about-me-container,
+    .mobile-nav a,
+    .info-font-small {
+        color: $black;
     }
-  }
 
-  .mobile-nav .mode-toggle-icon {
-    color: $black;
-  }
+    // nav
+    nav {
+        .burger-menu .line {
+            background: $black;
+        }
 
-  .skill-list > div {
-    background: rgba(0, 0, 0, 1);
-  }
+        .logo {
+            fill: $black;
 
-  @for $i from 1 through 4 {
-    #card#{$i} {
-      --index: #{$i};
+            &:hover {
+                fill: $orange;
+                transition: $transition1;
+            }
+        }
 
-      $brightness: 25% * $i;
+        .mode-toggle-icon,
+        > div:nth-child(3) a {
+            color: $black;
 
-      .card-body {
-        background-color: rgb($brightness, $brightness, $brightness);
-      }
+            &:hover {
+                color: $orange;
+                transition: $transition1;
+            }
+        }
     }
-  }
+
+    .mobile-nav .mode-toggle-icon {
+        color: $black;
+    }
+
+    .skill-list > div {
+        background: rgba(0, 0, 0, 1);
+    }
+
+    @for $i from 1 through 4 {
+        #card#{$i} {
+            --index: #{$i};
+
+            $brightness: 25% * $i;
+
+            .card-body {
+                background-color: rgb($brightness, $brightness, $brightness);
+            }
+        }
+    }
 }
