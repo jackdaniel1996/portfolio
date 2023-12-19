@@ -3,13 +3,15 @@ function init() {
         // ladeanimation
         const ladeanimation = document.querySelector(".loading");
         const kreis = document.querySelector(".loading-bg");
-        ladeanimation.classList.add("done");
-        document.body.style.overflow = "visible";
         const minDimension = Math.min(window.innerWidth, window.innerHeight);
-        kreis.style.width = `${minDimension * 2}px`;
-        kreis.style.height = `${minDimension * 2}px`;
         setTimeout(function () {
-            ladeanimation.style.display = "none";
+            ladeanimation.classList.add("done");
+            document.body.style.overflow = "visible";
+            kreis.style.width = `${minDimension * 2}px`;
+            kreis.style.height = `${minDimension * 2}px`;
+            setTimeout(function () {
+                ladeanimation.style.display = "none";
+            }, 1000);
         }, 500);
         start();
     });
