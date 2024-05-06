@@ -1,8 +1,6 @@
 @import "variables.scss";
 
 body.lightMode {
-    background-color: $whiteBg;
-
     .bg-dot-pattern {
         background-image: radial-gradient(#000 0.95px, rgba(0, 0, 0, 0) 0.95px);
     }
@@ -11,42 +9,22 @@ body.lightMode {
         box-shadow: 0 0 200px rgba(0, 0, 0, 0.2) inset;
     }
 
-    // fonts
-    section:not(#home):not(#contact-section) .section-headline,
-    .about-me-container,
-    .mobile-nav a,
-    .info-font-small {
-        color: $black;
-    }
-
     // nav
     nav {
-        .burger-menu .line {
-            background: $black;
-        }
-
         .logo {
-            fill: $black;
-
             &:hover {
-                fill: $orange;
+                fill: var(--color-orange);
                 transition: $transition1;
             }
         }
 
         .mode-toggle-icon,
         > div:nth-child(3) a {
-            color: $black;
-
             &:hover {
-                color: $orange;
+                color: var(--color-orange);
                 transition: $transition1;
             }
         }
-    }
-
-    .mobile-nav .mode-toggle-icon {
-        color: $black;
     }
 
     .skill-list > div {

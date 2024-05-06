@@ -17,21 +17,21 @@
         />
         <link rel="stylesheet" href="src/css/style.css" />
         <link rel="stylesheet" href="src/css/lightMode.css" />
+        <link rel="stylesheet" href="src/css/theme.css" />
         <script src="src/js/script.js"></script>
     </head>
-    <body class="">
+    <body id="start">
         <div class="loading">
             <span class="loader"></span>
             <div class="loading-text">Lade...</div>
             <div class="loading-bg"></div>
         </div>
         <div class="bg-noise"></div>
-        <div class="bg-dot-pattern"></div>
         <div class="vignette"></div>
         <nav id="nav" class="hover-gradient">
             <div></div>
             <div>
-                <a tabindex="1" href="#home">
+                <a tabindex="1" href="#start">
                     <?xml version="1.0" encoding="utf-8"?>
                     <svg
                         class="logo"
@@ -208,130 +208,145 @@
                 <div class="bg-image"></div>
             </div>
         </section>
-        <section id="about">
-            <div class="about-me-container">
-                <div class="bold section-headline">
-                    <span>Über mich</span>
+        <div class="content-wrapper">
+            <div class="content-backdrop"></div>
+            <div class="bg-dot-pattern"></div>
+            <section id="about">
+                <div class="about-me-container">
+                    <div>
+                        <div class="bold section-headline">
+                            <span>Über mich</span>
+                        </div>
+                        <div class="portrait"></div>
+                    </div>
+                    <div class="text-block">
+                        <p>
+                            <b
+                                >Hey, schön, dass du hier bist! Ich bin Daniel,
+                                <span id="age">27</span> Jahre alt und derzeit
+                                in Braunschweig ansässig.</b
+                            >
+                            Schon seit langer Zeit hege ich eine Leidenschaft
+                            für Frontend-Entwicklung und Design, auch wenn es
+                            anfangs nicht so klar war wie heute. Mein Weg begann
+                            etwa im Alter von 14 Jahren an meinem eigenen PC in
+                            meinem Kinderzimmer. Dort eignete ich mir die
+                            Grundlagen von Photoshop an und unternahm meine
+                            ersten Schritte in der Bildbearbeitung. Gleichzeitig
+                            gestaltete ich Gutscheine, Grußkarten, Schilder und
+                            vieles mehr für Freunde und Familie.
+                        </p>
+                        <p>
+                            Außerdem entdeckte ich auch mein Interesse für das
+                            Gestalten von Webseiten. Meine erste selbst
+                            erstellte Webseite entstand zwar noch mit einem
+                            Webseitenbaukasten, jedoch waren sämtliche Grafiken
+                            von meiner Hand. Diese Webseite war für einen
+                            Fanclub des Braunschweiger Fußball-Clubs BTSV, der
+                            zu jener Zeit in meinem Dorf gegründet wurde.
+                            Zusätzlich entwarf ich damals auch die zugehörigen
+                            Mitgliederausweise.
+                        </p>
+                        <p>
+                            Nach dem Abschluss der weiterführenden Schule
+                            entschied ich mich für eine Ausbildung als
+                            Mediengestalter. Zunächst absolvierte ich zwei Jahre
+                            an der Johannes-Selenka-Schule in Braunschweig, an
+                            der ich mein Fachabitur erwarb und den
+                            gestaltungstechnischen Assistenten abschloss. Diese
+                            praxisnahe schulische Ausbildung ermöglichte mir
+                            intensive Arbeit mit realen Kunden und vertiefte
+                            meine Kenntnisse in der Adobe Suite.
+                        </p>
+
+                        <p>
+                            Im Anschluss folgte eine dreijährige Ausbildung zum
+                            Mediengestalter bei der Online-Football-Association
+                            (kurz OFA), dem Unternehmen hinter dem Browsergame
+                            ONLINELIGA.de, einem Online-Fußballmanager. Meine
+                            Tätigkeiten begannen mit der Bildbearbeitung und der
+                            Erstellung von Grafiken. Aktuell bin ich
+                            hauptsächlich für das gesamte Frontend und die API
+                            von Onlineliga verantwortlich. Da wir ein kleines
+                            Team sind, musste ich meine Aufgaben ständig
+                            erweitern. Das hat mir die Chance gegeben, viel und
+                            praxisnah über Frontend-Entwicklung zu lernen.
+                        </p>
+                    </div>
                 </div>
-                <div class="text-block">
-                    <p>
-                        <b
-                            >Hey, schön, dass du hier bist! Ich bin Daniel, 27
-                            Jahre alt und derzeit in Braunschweig ansässig.</b
+            </section>
+            <section id="projects">
+                <div class="projects-cards-container">
+                    <div class="bold section-headline">
+                        <span>Projekte</span>
+                    </div>
+                    <ul id="cards">
+                        <li class="card" id="card1">
+                            <div class="card-body">
+                                <h2>Card 1</h2>
+                            </div>
+                        </li>
+                        <li class="card" id="card2">
+                            <div class="card-body">
+                                <h2>Card 2</h2>
+                            </div>
+                        </li>
+                        <li class="card" id="card3">
+                            <div class="card-body">
+                                <h2>Card 3</h2>
+                            </div>
+                        </li>
+                        <li class="card" id="card4">
+                            <div class="card-body">
+                                <h2>Card 4</h2>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+            <section id="skills">
+                <div class="bold section-headline">
+                    <span>Skills</span>
+                </div>
+                <div class="skill-list">
+                    <div class="glass-bg">HTML</div>
+                    <div class="glass-bg">Bootstrap</div>
+                    <div class="glass-bg">CSS</div>
+                    <div class="glass-bg">SCSS</div>
+                    <div class="glass-bg">Tailwind</div>
+                    <div class="glass-bg">PHP*</div>
+                    <div class="glass-bg">JS</div>
+                    <div class="glass-bg">jQuery</div>
+                    <div class="glass-bg">React*</div>
+                    <div class="glass-bg">Gsap</div>
+                    <div class="glass-bg">Photoshop</div>
+                    <div class="glass-bg">Illustrator</div>
+                    <div class="glass-bg">InDesign</div>
+                </div>
+
+                <div class="info-font-small">*Derzeit am lernen</div>
+            </section>
+            <!-- <section id="cv"> (lebenslauf)
+
+        </section> -->
+            <section id="contact-section">
+                <div class="footer-content-container">
+                    <div class="bold section-headline">
+                        <span>Kontakt</span>
+                    </div>
+                    <div class="text-block">
+                        Schreib mir doch mal!
+                        <a href="mailto:daniel.klein.dev@gmail.com"
+                            >daniel.klein.dev@gmail.com</a
                         >
-                        Schon seit langer Zeit hege ich eine Leidenschaft für
-                        Frontend-Entwicklung und Design, auch wenn es anfangs
-                        nicht so klar war wie heute. Mein Weg begann etwa im
-                        Alter von 14 Jahren an meinem eigenen PC in meinem
-                        Kinderzimmer. Dort eignete ich mir die Grundlagen von
-                        Photoshop an und unternahm meine ersten Schritte in der
-                        Bildbearbeitung. Gleichzeitig gestaltete ich Gutscheine,
-                        Grußkarten, Schilder und vieles mehr für Freunde und
-                        Familie.
-                    </p>
-                    <p>
-                        Außerdem entdeckte ich auch mein Interesse für das
-                        Gestalten von Webseiten. Meine erste selbst erstellte
-                        Webseite entstand zwar noch mit einem
-                        Webseitenbaukasten, jedoch waren sämtliche Grafiken von
-                        meiner Hand. Diese Webseite war für einen Fanclub des
-                        Braunschweiger Fußball-Clubs BTSV, der zu jener Zeit in
-                        meinem Dorf gegründet wurde. Zusätzlich entwarf ich
-                        damals auch die zugehörigen Mitgliederausweise.
-                    </p>
-                    <p>
-                        Nach dem Abschluss der weiterführenden Schule entschied
-                        ich mich für eine Ausbildung als Mediengestalter.
-                        Zunächst absolvierte ich zwei Jahre an der
-                        Johannes-Selenka-Schule in Braunschweig, an der ich mein
-                        Fachabitur erwarb und den gestaltungstechnischen
-                        Assistenten abschloss. Diese praxisnahe schulische
-                        Ausbildung ermöglichte mir intensive Arbeit mit realen
-                        Kunden und vertiefte meine Kenntnisse in der Adobe
-                        Suite.
-                    </p>
-
-                    <p>
-                        Im Anschluss folgte eine dreijährige Ausbildung zum
-                        Mediengestalter bei der Online-Football-Association
-                        (kurz OFA), dem Unternehmen hinter dem Browsergame
-                        ONLINELIGA.de, einem Online-Fußballmanager. Meine
-                        Tätigkeiten begannen mit der Bildbearbeitung und der
-                        Erstellung von Grafiken. Aktuell bin ich hauptsächlich
-                        für das gesamte Frontend und die API von Onlineliga
-                        verantwortlich. Da wir ein kleines Team sind, musste ich
-                        meine Aufgaben ständig erweitern. Das hat mir die Chance
-                        gegeben, viel und praxisnah über Frontend-Entwicklung zu
-                        lernen.
-                    </p>
+                    </div>
                 </div>
-            </div>
-        </section>
-        <section id="projects">
-            <div class="projects-cards-container">
-                <div class="bold section-headline">
-                    <span>Projekte</span>
+                <div class="footer-bg-block">
+                    <div class="footer-elem"></div>
                 </div>
-                <ul id="cards">
-                    <li class="card" id="card1">
-                        <div class="card-body">
-                            <h2>Card 1</h2>
-                        </div>
-                    </li>
-                    <li class="card" id="card2">
-                        <div class="card-body">
-                            <h2>Card 2</h2>
-                        </div>
-                    </li>
-                    <li class="card" id="card3">
-                        <div class="card-body">
-                            <h2>Card 3</h2>
-                        </div>
-                    </li>
-                    <li class="card" id="card4">
-                        <div class="card-body">
-                            <h2>Card 4</h2>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-        </section>
-        <section id="skills">
-            <div class="bold section-headline">
-                <span>Skills</span>
-            </div>
-            <div class="skill-list">
-                <div class="glass-bg">HTML</div>
-                <div class="glass-bg">Bootstrap</div>
-                <div class="glass-bg">CSS</div>
-                <div class="glass-bg">SCSS</div>
-                <div class="glass-bg">Tailwind</div>
-                <div class="glass-bg">PHP*</div>
-                <div class="glass-bg">JS</div>
-                <div class="glass-bg">jQuery</div>
-                <div class="glass-bg">React*</div>
-                <div class="glass-bg">Gsap</div>
-                <div class="glass-bg">Photoshop</div>
-                <div class="glass-bg">Illustrator</div>
-                <div class="glass-bg">InDesign</div>
-            </div>
-
-            <div class="info-font-small">*Derzeit am lernen</div>
-        </section>
-        <!-- <section id="cv"> (lebenslauf)
-
-    </section> -->
-        <section id="contact-section">
-            <div class="footer-content-container">
-                <div class="bold section-headline">
-                    <span>Kontakt</span>
-                </div>
-            </div>
-            <div class="footer-bg-block">
-                <div class="footer-elem"></div>
-            </div>
-            <div id="contact"></div>
-        </section>
+                <div id="contact"></div>
+            </section>
+        </div>
         <script>
             (function () {
                 init();

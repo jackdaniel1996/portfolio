@@ -1,39 +1,17 @@
-body.lightMode {
-  background-color: #fefefe;
-}
 body.lightMode .bg-dot-pattern {
   background-image: radial-gradient(#000 0.95px, rgba(0, 0, 0, 0) 0.95px);
 }
 body.lightMode .vignette {
   box-shadow: 0 0 200px rgba(0, 0, 0, 0.2) inset;
 }
-body.lightMode section:not(#home):not(#contact-section) .section-headline,
-body.lightMode .about-me-container,
-body.lightMode .mobile-nav a,
-body.lightMode .info-font-small {
-  color: #1c1c1c;
-}
-body.lightMode nav .burger-menu .line {
-  background: #1c1c1c;
-}
-body.lightMode nav .logo {
-  fill: #1c1c1c;
-}
 body.lightMode nav .logo:hover {
-  fill: #ff7152;
+  fill: var(--color-orange);
   transition: all 0.5s ease-in-out;
-}
-body.lightMode nav .mode-toggle-icon,
-body.lightMode nav > div:nth-child(3) a {
-  color: #1c1c1c;
 }
 body.lightMode nav .mode-toggle-icon:hover,
 body.lightMode nav > div:nth-child(3) a:hover {
-  color: #ff7152;
+  color: var(--color-orange);
   transition: all 0.5s ease-in-out;
-}
-body.lightMode .mobile-nav .mode-toggle-icon {
-  color: #1c1c1c;
 }
 body.lightMode .skill-list > div {
   background: rgb(0, 0, 0);

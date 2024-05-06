@@ -1,6 +1,6 @@
 body {
   margin: 0;
-  background-color: #191919;
+  background-color: var(--color-bg);
   position: relative;
   transition: all 0.5s ease-in-out;
   overflow: hidden;
@@ -20,12 +20,12 @@ body {
 
 ::-moz-selection {
   color: black;
-  background: #ff7152;
+  background: var(--color-orange);
 }
 
 ::selection {
   color: black;
-  background: #ff7152;
+  background: var(--color-orange);
 }
 
 .bg-noise {
@@ -52,7 +52,7 @@ body {
   left: 0;
   width: 100%;
   height: 100vh;
-  z-index: -1;
+  z-index: 0;
   opacity: 0.1;
   background-image: radial-gradient(#fff 0.95px, rgba(0, 0, 0, 0) 0.95px);
   background-size: 25px 25px;
@@ -118,7 +118,7 @@ body {
   position: absolute;
   top: 50%;
   left: 50%;
-  background-color: #1c1c1c;
+  background-color: var(--color-bg);
   transform: translate(-50%, -50%);
   width: 100%;
   height: 100%;
@@ -137,12 +137,12 @@ body {
   content: "";
   position: absolute;
   border-radius: 50px;
-  box-shadow: 0 0 0 3px inset #fff;
+  box-shadow: 0 0 0 3px inset var(--color-white);
   animation: l4 2.5s infinite;
 }
 .loading .loader:after {
   animation-delay: -1.25s;
-  box-shadow: 0 0 0 3px inset #ff7152;
+  box-shadow: 0 0 0 3px inset var(--color-orange);
 }
 @keyframes kreisAnimation {
   100% {
@@ -181,7 +181,7 @@ body {
 }
 .loading .loading-text {
   content: "Lade...";
-  color: #eaeaea;
+  color: var(--color-white);
   font-family: "Raleway", sans-serif;
   font-size: 16pt;
   top: 50%;
@@ -243,36 +243,36 @@ nav > div:nth-child(3) {
 }
 nav > div:nth-child(3) a {
   padding: 0 10px;
-  color: #eaeaea;
+  color: var(--color-white);
   text-decoration: none;
   transition: all 0.5s ease-in-out;
   position: relative;
 }
 nav > div:nth-child(3) a:hover {
-  color: #ff7152;
+  color: var(--color-orange);
   transition: all 0.5s ease-in-out;
 }
 nav .logo {
   width: 175px;
   height: 35px;
-  fill: #ececec;
   transition: all 0.5s ease-in-out;
+  fill: var(--color-white);
 }
 nav .logo:hover {
-  fill: #ff7152;
+  fill: var(--color-orange);
   transition: all 0.5s ease-in-out;
 }
 nav .burger-menu {
   display: none;
 }
 nav .mode-toggle-icon {
-  color: #eaeaea;
+  color: var(--color-white);
   cursor: pointer;
   transition: all 0.5s ease-in-out;
   font-size: 16pt;
 }
 nav .mode-toggle-icon:hover {
-  color: #ff7152;
+  color: var(--color-orange);
   transition: all 0.5s ease-in-out;
 }
 
@@ -281,7 +281,7 @@ nav .mode-toggle-icon:hover {
 }
 
 .bg-wrapper {
-  margin-top: -56px;
+  margin-top: -60px;
   width: 100%;
   height: 100vh;
   top: 0;
@@ -348,7 +348,7 @@ nav .mode-toggle-icon:hover {
 }
 .landingpage-name-font {
   font-family: "Raleway", sans-serif;
-  color: #eaeaea;
+  color: var(--color-white);
   font-size: clamp(4rem, 6vw, 7rem);
   line-height: 100%;
   padding-left: 30px;
@@ -361,18 +361,51 @@ nav .mode-toggle-icon:hover {
 }
 .landingpage-name-font div:last-child {
   -webkit-text-stroke-width: 2px;
-  -webkit-text-stroke-color: #eaeaea;
+  -webkit-text-stroke-color: var(--color-white);
   color: rgba(0, 0, 0, 0);
 }
 
 .about-me-container {
   display: flex;
   flex-direction: row;
-  color: #eaeaea;
+  color: var(--color-white);
   position: relative;
 }
 .about-me-container > div {
   width: 50%;
+}
+
+section#home {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  height: 100svh;
+}
+
+.content-wrapper {
+  position: relative;
+  top: 100svh;
+  background-color: var(--color-bg);
+}
+
+.content-backdrop {
+  z-index: 0;
+  position: absolute;
+  inset: 0;
+  backdrop-filter: blur(40px);
+  -webkit-backdrop-filter: blur(40px);
+  mask-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.5) 10%, rgba(0, 0, 0, 0.8) 20%, rgb(0, 0, 0) 30%, rgb(0, 0, 0));
+  -webkit-mask-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.5) 10%, rgba(0, 0, 0, 0.8) 20%, rgb(0, 0, 0) 30%, rgb(0, 0, 0));
+  height: 260px;
+  transform: translate(0, -50%);
+}
+
+.portrait {
+  background: url("../imgs/portrait.jpg");
+  background-size: 100%;
+  height: 300px;
+  width: 300px;
+  border-radius: 30px;
 }
 
 section:not(#home) {
@@ -392,7 +425,7 @@ section:not(#home):before {
 section:not(#home) .section-headline {
   font-size: clamp(2rem, 4vw, 5rem);
   white-space: nowrap;
-  color: #eaeaea;
+  color: var(--color-white);
   padding-left: 10px;
   font-family: "Raleway", sans-serif;
   margin-bottom: 50px;
@@ -410,12 +443,18 @@ section:not(#home) .inView.section-headline > span:after {
   content: "";
   height: 5px;
   width: 100%;
-  background-color: #ff7152;
+  background-color: var(--color-orange);
   transition: all 0.5s ease-in-out;
   position: absolute;
   left: 0;
   bottom: -5px;
   border-radius: 5px;
+}
+section:not(#home)#contact-section {
+  height: 100vh;
+}
+section:not(#home)#contact-section .section-headline {
+  color: #eaeaea;
 }
 
 .projects-cards-container {
@@ -494,14 +533,14 @@ section:not(#home) .inView.section-headline > span:after {
 .skill-list > div:hover {
   transform: scale(1.1);
   transition: all 0.5s ease-in-out;
-  color: #ff7152;
+  color: var(--color-orange);
   background: rgba(255, 255, 255, 0.1);
 }
 
 .info-font-small {
   font-family: "Raleway", sans-serif;
   font-size: 9pt;
-  color: #eaeaea;
+  color: var(--color-white);
   margin-top: 50px;
 }
 
@@ -535,6 +574,17 @@ section:not(#home) .inView.section-headline > span:after {
   padding-top: 40px;
   z-index: 1;
   position: absolute;
+}
+.footer-content-container .text-block {
+  color: #eaeaea;
+  padding-left: 10px;
+}
+.footer-content-container .text-block > a {
+  font-weight: 700;
+  margin-top: 10px;
+  display: block;
+  color: inherit;
+  text-decoration-color: var(--color-orange);
 }
 
 @media (max-width: 768px) {
@@ -616,18 +666,16 @@ section:not(#home) .inView.section-headline > span:after {
     position: absolute;
     top: 0;
     right: 0;
-    width: 80%;
+    width: 100%;
     height: 100%;
     background: rgba(255, 255, 255, 0.06);
     -webkit-backdrop-filter: blur(3.6px);
             backdrop-filter: blur(3.6px);
-    -webkit-mask-image: linear-gradient(-90deg, rgb(0, 0, 0) 55%, rgba(0, 0, 0, 0.8) 70%, rgba(0, 0, 0, 0) 100%);
-    mask-image: linear-gradient(-90deg, rgb(0, 0, 0) 55%, rgba(0, 0, 0, 0.8) 70%, rgba(0, 0, 0, 0) 100%);
     z-index: -1;
     pointer-events: none;
   }
   .mobile-nav a {
-    color: #eaeaea;
+    color: var(--color-white);
     text-decoration: none;
     font-family: "Raleway", sans-serif;
     font-size: 26pt;
@@ -644,7 +692,7 @@ section:not(#home) .inView.section-headline > span:after {
     transform: rotateY(0deg);
   }
   .mobile-nav .mode-toggle-icon {
-    color: #eaeaea;
+    color: var(--color-white);
     font-size: 28pt;
     margin-top: 15px;
   }
@@ -654,7 +702,7 @@ section:not(#home) .inView.section-headline > span:after {
   }
   .open nav .burger-menu:after {
     content: "";
-    background-color: #ff7152;
+    background-color: var(--color-orange);
     border-radius: 100%;
     position: absolute;
     right: -5px;

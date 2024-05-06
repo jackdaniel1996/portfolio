@@ -17,7 +17,19 @@ function init() {
     });
 }
 
+function setAge(dateString) {
+    var today = new Date();
+    var birthDate = new Date(dateString);
+    var age = today.getFullYear() - birthDate.getFullYear();
+    var m = today.getMonth() - birthDate.getMonth();
+    if (m < 0 || (m === 0 && today.getDate() < birthDate.getDate())) {
+        age--;
+    }
+    document.querySelector("#age").innerHTML = age;
+}
+
 function start() {
+    setAge("1996/10/30");
     toggleNavbarClass();
     gradientHover();
     anchorScroll();
