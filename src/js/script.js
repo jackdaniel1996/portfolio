@@ -157,3 +157,20 @@ function toggleMode() {
         elem.innerHTML = mode;
     });
 }
+
+function showMore(btn, target) {
+    const overlay = document.querySelector(target);
+    const status = overlay.getAttribute("data-expanded");
+    const show = "Mehr Details anzeigen";
+    const hide = "Weniger Details anzeigen";
+
+    if (status > 0) {
+        overlay.setAttribute("data-expanded", 0);
+        overlay.parentElement.setAttribute("data-expanded", 0);
+        btn.innerHTML = show;
+    } else {
+        overlay.setAttribute("data-expanded", 1);
+        overlay.parentElement.setAttribute("data-expanded", 1);
+        btn.innerHTML = hide;
+    }
+}

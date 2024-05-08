@@ -540,7 +540,64 @@ section:not(#home) {
         justify-content: center;
         align-items: center;
         transition: all 0.5s;
+        position: relative;
+        overflow: hidden;
     }
+}
+
+.desktop-visual {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+}
+
+.reaction-game {
+    background: url("../imgs/reactionGameDesktop.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.card-text {
+    position: absolute;
+    width: 65%;
+    padding: 25px;
+    background: var(--color-bg);
+    color: var(--color-white);
+    border-radius: 30px;
+    bottom: 50px;
+    left: 50%;
+    transform: translate(-50%);
+    box-shadow: rgba(0, 0, 0, 0.9) 0px 1px 4px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-column-gap: 50px;
+
+    a {
+        color: var(--color-orange);
+        font-weight: 700;
+    }
+
+    .skill-list {
+        grid-row-start: 2;
+        grid-column-start: 1;
+
+        grid-row-end: 3;
+        grid-column-end: 3;
+    }
+}
+
+.text-block-headline {
+    font-weight: 700;
+    text-decoration: underline;
+    text-decoration-color: var(--color-orange);
+    font-size: 16pt;
+}
+
+.show-more-btn {
+    display: none;
 }
 
 @for $i from 1 through 4 {
@@ -636,238 +693,5 @@ section:not(#home) {
             color: inherit;
             text-decoration-color: var(--color-orange);
         }
-    }
-}
-
-// Mobile
-@media (max-width: 768px) {
-    // landingpage
-    .bg-wrapper {
-        justify-content: center;
-
-        .landingpage-name-font {
-            padding: 0 20px;
-        }
-
-        .bg-image {
-            background: url(../imgs/gradient-mobile.png);
-            background-repeat: no-repeat;
-            background-size: cover;
-        }
-    }
-
-    .vignette {
-        box-shadow: 0 0 200px rgba(0, 0, 0, 0.2) inset;
-    }
-
-    // navigation
-    nav {
-        padding: 10px 15px;
-        width: 100%;
-        box-sizing: border-box;
-
-        > div {
-            width: 50%;
-            position: relative;
-
-            &:first-child,
-            &:nth-child(3) {
-                display: none;
-            }
-        }
-
-        .burger-menu {
-            display: block;
-            height: 20px;
-            position: absolute;
-            right: 15px;
-
-            .line {
-                position: absolute;
-                height: 4px;
-                width: 30px;
-                background: #fff;
-                border-radius: 2px;
-                display: block;
-                transform-origin: center;
-                right: 0;
-                transition: all 0.3s ease-in-out;
-
-                &:nth-child(1) {
-                    top: 0px;
-                }
-                &:nth-child(2) {
-                    top: 9px;
-                    width: 20px;
-                    opacity: 1;
-                }
-                &:nth-child(3) {
-                    top: 18px;
-                }
-            }
-        }
-
-        &.hover-gradient:hover::before {
-            opacity: 0;
-        }
-    }
-
-    .mobile-nav {
-        display: flex;
-        flex-direction: column;
-        justify-content: flex-start;
-        align-items: flex-end;
-        position: fixed;
-        z-index: 499;
-        width: 100%;
-        height: 100%;
-        padding: 60px 15px;
-        box-sizing: border-box;
-        right: 0;
-        top: 0;
-        opacity: 0;
-        transition: $transition1;
-        pointer-events: none;
-
-        .background-blur {
-            position: absolute;
-            top: 0;
-            right: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(255, 255, 255, 0.06);
-            backdrop-filter: blur(3.6px);
-            z-index: -1;
-            pointer-events: none;
-        }
-
-        a {
-            color: var(--color-white);
-            text-decoration: none;
-            font-family: $headlineFont;
-            font-size: 26pt;
-            font-weight: 700;
-            line-height: 200%;
-            transform-origin: right;
-            transition: $transition1;
-            opacity: 0;
-            transform: rotateY(90deg);
-
-            &.in {
-                transition: $transition1;
-                opacity: 1;
-                transform: rotateY(0deg);
-            }
-        }
-
-        .mode-toggle-icon {
-            color: var(--color-white);
-            font-size: 28pt;
-            margin-top: 15px;
-        }
-    }
-
-    .open {
-        nav {
-            box-shadow: none;
-            border-bottom: none;
-
-            .burger-menu {
-                &:after {
-                    content: "";
-                    background-color: var(--color-orange);
-                    border-radius: 100%;
-                    position: absolute;
-                    right: -5px;
-                    top: -8px;
-                    z-index: -1;
-                    width: 40px;
-                    height: 40px;
-                    animation: burgerBg 0.7s ease-in-out;
-                    opacity: 0;
-                }
-
-                .line {
-                    &:nth-child(1) {
-                        transform: rotate(45deg);
-                        top: 10px;
-                    }
-                    &:nth-child(2) {
-                        opacity: 0;
-                    }
-                    &:nth-child(3) {
-                        transform: rotate(-45deg);
-                        top: 10px;
-                    }
-                }
-            }
-        }
-
-        .mobile-nav {
-            opacity: 1;
-            pointer-events: all;
-        }
-    }
-
-    @keyframes burgerBg {
-        0% {
-            transform: scale(0.5);
-            opacity: 0;
-        }
-        50% {
-            opacity: 1;
-        }
-        100% {
-            transform: scale(1.2);
-            opacity: 0;
-        }
-    }
-
-    @keyframes mobileNavElems {
-        0% {
-            transform: rotateY(90deg);
-            opacity: 0;
-        }
-        100% {
-            transform: rotateY(0deg);
-            opacity: 1;
-        }
-    }
-
-    section:not(#home) {
-        padding: 200px 10% 0;
-
-        &:before {
-            top: 100px;
-        }
-    }
-
-    .about-me-container {
-        flex-direction: column;
-
-        > div {
-            width: 100%;
-
-            &:first-child {
-                padding-bottom: 20px;
-            }
-        }
-    }
-
-    // projects
-    .projects-cards-container {
-        width: 100%;
-        margin: 0;
-
-        .card-body {
-            width: 90vw;
-            margin-left: -5%;
-        }
-    }
-
-    // footer/contact
-    .footer-bg-block {
-        width: 90%;
-        left: 5%;
     }
 }

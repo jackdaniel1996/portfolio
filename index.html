@@ -18,6 +18,7 @@
         <link rel="stylesheet" href="src/css/style.css" />
         <link rel="stylesheet" href="src/css/lightMode.css" />
         <link rel="stylesheet" href="src/css/theme.css" />
+        <link rel="stylesheet" href="src/css/responsive.css" />
         <script src="src/js/script.js"></script>
     </head>
     <body id="start">
@@ -282,8 +283,38 @@
                     </div>
                     <ul id="cards">
                         <li class="card" id="card1">
-                            <div class="card-body">
-                                <h2>Card 1</h2>
+                            <div class="card-body" data-expanded="0">
+                                <div class="desktop-visual reaction-game"></div>
+                                <div class="text-block card-text" id="reactionGame" data-expanded="0">
+                                    <div>
+                                        <button class="show-more-btn" onclick="showMore(this, '#reactionGame')">Mehr Details anzeigen</button>
+                                        <div class="text-block-headline">
+                                            "Reaction Game" - Reaktionsspiel
+                                        </div>
+                                        <p>
+                                            Ein simples Reaktionsspiel mit einer
+                                            Rangliste die die Bestzeiten im
+                                            speichert.
+                                        </p>
+                                        <p>
+                                            Erstellt mit Tailwind für den Style
+                                            und Gsap für die Animationen.
+                                        </p>                                        
+                                    </div>
+                                    <div>
+                                        <p>
+                                            <div>Schau es dir doch mal an:</div>
+                                            <a href="https://jackdaniel1996.github.io/reaction/" target="_blank">Hier gehts zum Spiel!</a>
+                                        </p>
+                                    </div>
+                                    <div class="skill-list">
+                                        <div class="glass-bg">HTML</div>
+                                        <div class="glass-bg">SCSS</div>
+                                        <div class="glass-bg">Tailwind</div>
+                                        <div class="glass-bg">JS</div>
+                                        <div class="glass-bg">Gsap</div>
+                                    </div>
+                                </div>
                             </div>
                         </li>
                         <li class="card" id="card2">
