@@ -204,6 +204,18 @@
     background-repeat: no-repeat;
     background-position: center;
   }
+  .cd-mhi {
+    background: url("../imgs/mhi-mobile.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+  .notes {
+    background: url("../imgs/notesMobile.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
   .card-text {
     display: block;
     width: 100%;
@@ -211,6 +223,7 @@
     bottom: 0;
     transform: translate(-50%, calc(100% - 200px));
     transition: all 0.5s ease-in-out;
+    font-size: 11pt;
   }
   .card-text[data-expanded="1"] {
     transform: translate(-50%, -20px);
@@ -250,5 +263,9 @@
   .footer-bg-block {
     width: 90%;
     left: 5%;
+  }
+  .text-block {
+    font-size: 11pt;
+    line-height: 16pt;
   }
 }/*# sourceMappingURL=responsive.css.map */

@@ -105,6 +105,10 @@ body {
   letter-spacing: 0.5px;
   transition: all 0.5s ease-in-out;
 }
+.text-block a {
+  color: var(--color-orange);
+  font-weight: 700;
+}
 
 .loading {
   position: fixed;
@@ -500,6 +504,20 @@ section:not(#home)#contact-section .section-headline {
   background-position: center;
 }
 
+.cd-mhi {
+  background: url("../imgs/mhi-desktop.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.notes {
+  background: url("../imgs/notesDesktop.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: left;
+}
+
 .card-text {
   position: absolute;
   width: 65%;
@@ -568,7 +586,8 @@ section:not(#home)#contact-section .section-headline {
 .card {
   position: sticky;
   top: 0;
-  padding-top: calc(var(--index) * 60px);
+  margin-top: calc(var(--index) * 60px);
+  padding-top: 60px;
 }
 
 .skill-list > div {

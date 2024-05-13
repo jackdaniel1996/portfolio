@@ -111,6 +111,11 @@ body {
     line-height: 18pt;
     letter-spacing: 0.5px;
     transition: $transition1;
+
+    a {
+        color: var(--color-orange);
+        font-weight: 700;
+    }
 }
 
 .loading {
@@ -560,6 +565,20 @@ section:not(#home) {
     background-position: center;
 }
 
+.cd-mhi {
+    background: url("../imgs/mhi-desktop.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.notes {
+    background: url("../imgs/notesDesktop.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: left;
+}
+
 .card-text {
     position: absolute;
     width: 65%;
@@ -614,7 +633,8 @@ section:not(#home) {
 .card {
     position: sticky;
     top: 0;
-    padding-top: calc(var(--index) * $cardTopPadding);
+    margin-top: calc(var(--index) * $cardTopPadding);
+    padding-top: 60px;
 }
 
 // skills

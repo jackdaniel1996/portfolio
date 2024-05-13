@@ -243,8 +243,23 @@
         }
     }
 
+    // visuals
     .reaction-game {
         background: url(../imgs/reactionGameMobile.png);
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+
+    .cd-mhi {
+        background: url("../imgs/mhi-mobile.jpg");
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+
+    .notes {
+        background: url("../imgs/notesMobile.png");
         background-size: cover;
         background-repeat: no-repeat;
         background-position: center;
@@ -257,6 +272,7 @@
         bottom: 0;
         transform: translate(-50%, calc(100% - 200px));
         transition: $transition1;
+        font-size: 11pt;
 
         &[data-expanded="1"] {
             transform: translate(-50%, -20px);
@@ -309,5 +325,10 @@
     .footer-bg-block {
         width: 90%;
         left: 5%;
+    }
+
+    .text-block {
+        font-size: 11pt;
+        line-height: 16pt;
     }
 }

@@ -229,11 +229,13 @@
                     </div>
                     <div class="text-block">
                         <p>
-                            <b
-                                >Hey, schön, dass du hier bist! Ich bin Daniel,
-                                <span id="age">27</span> Jahre alt und derzeit
-                                in Braunschweig ansässig.</b
-                            >
+                            <p>
+                                <b
+                                    >Hey, schön, dass du hier bist! Ich bin Daniel,
+                                    <span id="age">27</span> Jahre alt und derzeit
+                                    in Braunschweig ansässig.</b
+                                >
+                            </p>
                             Schon seit langer Zeit hege ich eine Leidenschaft
                             für Frontend-Entwicklung und Design, auch wenn es
                             anfangs nicht so klar war wie heute. Mein Weg begann
@@ -266,7 +268,6 @@
                             intensive Arbeit mit realen Kunden und vertiefte
                             meine Kenntnisse in der Adobe Suite.
                         </p>
-
                         <p>
                             Im Anschluss folgte eine dreijährige Ausbildung zum
                             Mediengestalter bei der Online-Football-Association
@@ -279,6 +280,9 @@
                             Team sind, musste ich meine Aufgaben ständig
                             erweitern. Das hat mir die Chance gegeben, viel und
                             praxisnah über Frontend-Entwicklung zu lernen.
+                        </p>
+                        <p>
+                            <a href="#contact">Du willst mehr wissen? Schreib mir doch mal!</a>
                         </p>
                     </div>
                 </div>
@@ -300,8 +304,7 @@
                                         </div>
                                         <p>
                                             Ein simples Reaktionsspiel mit einer
-                                            Rangliste die die Bestzeiten im
-                                            speichert.
+                                            Rangliste, die Bestzeiten speichert.
                                         </p>
                                         <p>
                                             Erstellt mit Tailwind für den Style
@@ -309,6 +312,10 @@
                                         </p>                                        
                                     </div>
                                     <div>
+                                        <p>
+                                            Ein kleines Projekt, welches ich in meiner Freizeit programmiert habe
+                                            um mich Tailwind und Gsap vertraut zu machen.
+                                        </p>
                                         <p>
                                             <div>Schau es dir doch mal an:</div>
                                             <a href="https://reaction.danielkle.in/" target="_blank">Hier gehts zum Spiel!</a>
@@ -331,12 +338,57 @@
                         </li>
                         <li class="card" id="card3">
                             <div class="card-body">
-                                <h2>Card 3</h2>
+                                <div class="desktop-visual notes"></div>
+                                <div class="text-block card-text" id="notes" data-expanded="0">
+                                    <div>
+                                        <button class="show-more-btn" onclick="showMore(this, '#notes')">Mehr Details anzeigen</button>
+                                        <div class="text-block-headline">
+                                            Notes.
+                                        </div>
+                                        <p>
+                                            Eine einfache Notizanwendung, die sich leicht von Trello inspiriert ist und es ermöglicht, Notizen direkt im Browser zu speichern.
+                                        </p>                                        
+                                    </div>
+                                    <div>
+                                        <p>
+                                            Ziel war es eine Anwendung zu programmieren und mehr über Javascript und jQuery zu lernen.
+                                        </p>
+                                        <p>
+                                            <a href="https://notes.danielkle.in/" target="_blank">Hier gehts zu "Notes."</a>
+                                        </p>
+                                    </div>
+                                    <div class="skill-list">
+                                        <div class="glass-bg">HTML</div>
+                                        <div class="glass-bg">SCSS</div>
+                                        <div class="glass-bg">JS</div>
+                                        <div class="glass-bg">jQuery</div>
+                                    </div>
+                                </div>
                             </div>
                         </li>
                         <li class="card" id="card4">
                             <div class="card-body">
-                                <h2>Card 4</h2>
+                                <div class="desktop-visual cd-mhi"></div>
+                                <div class="text-block card-text" id="mhi" data-expanded="0">
+                                    <div>
+                                        <button class="show-more-btn" onclick="showMore(this, '#mhi')">Mehr Details anzeigen</button>
+                                        <div class="text-block-headline">
+                                            Corporate Design: Maurice Harbord Immobilien
+                                        </div>
+                                        <p>
+                                            Für einen Freund, der sich als Immobilienmakler selbstständig gemacht hat, durfte ich das komplette Corporate Design gestalten – vom Logo bis zu Visitenkarten, Flyern und mehr.
+                                        </p>                                        
+                                    </div>
+                                    <div>
+                                        <p>
+                                            Durch enge Zusammenarbeit haben wir ein ansprechendes und konsistentes Erscheinungsbild geschaffen.
+                                        </p>
+                                    </div>
+                                    <div class="skill-list">
+                                        <div class="glass-bg">Photoshop</div>
+                                        <div class="glass-bg">Illustrator</div>
+                                    </div>
+                                </div>
                             </div>
                         </li>
                     </ul>
