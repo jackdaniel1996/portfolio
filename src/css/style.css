@@ -430,6 +430,7 @@ section#home {
   -webkit-mask-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.5) 10%, rgba(0, 0, 0, 0.8) 20%, rgb(0, 0, 0) 30%, rgb(0, 0, 0));
   height: 260px;
   transform: translate(0, -50%);
+  pointer-events: none;
 }
 
 .portrait {

@@ -484,6 +484,7 @@ section#home {
     );
     height: 260px;
     transform: translate(0, -50%);
+    pointer-events: none;
 }
 
 .portrait {
