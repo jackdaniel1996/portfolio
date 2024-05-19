@@ -67,6 +67,11 @@ function start() {
     if (mode == "light_mode") {
         toggleMode();
     }
+
+    let scrollIndicator = document.querySelector(".scroll-indicator");
+    setTimeout(function () {
+        scrollIndicator.classList.remove("hidden");
+    }, 4000);
 }
 
 function anchorScroll() {

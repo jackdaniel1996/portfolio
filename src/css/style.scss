@@ -51,6 +51,7 @@ body {
     opacity: 0.1;
     background-image: radial-gradient(#fff 0.95px, rgba(0, 0, 0, 0) 0.95px);
     background-size: 25px 25px;
+    pointer-events: none;
 }
 
 .vignette {
@@ -114,7 +115,7 @@ body {
 
     a {
         color: var(--color-orange);
-        font-weight: 700;
+        font-weight: 500;
     }
 }
 
@@ -322,7 +323,7 @@ nav {
     height: 100vh;
     top: 0;
     left: 0;
-    pointer-events: none;
+    // pointer-events: none;
     display: flex;
     align-items: flex-start;
     justify-content: flex-end;
@@ -340,6 +341,36 @@ nav {
         left: 0;
         position: absolute;
         opacity: 0.9;
+    }
+}
+
+.scroll-indicator {
+    animation: bounce 3s ease infinite;
+    bottom: 4rem;
+    color: #fff;
+    font-size: 1.5rem;
+    height: 4rem;
+    left: 50%;
+    letter-spacing: -1px;
+    line-height: 4rem;
+    margin-left: -3rem;
+    opacity: 0.8;
+    position: absolute;
+    text-align: center;
+    width: 6rem;
+    text-decoration: none;
+    z-index: 100;
+    transition: $transition1;
+
+    &.hidden {
+        opacity: 0;
+        pointer-events: none;
+    }
+}
+
+@keyframes bounce {
+    50% {
+        transform: translateY(-50%);
     }
 }
 
@@ -515,6 +546,44 @@ section:not(#home) {
 
         .section-headline {
             color: #eaeaea;
+            margin-top: 40px;
+        }
+    }
+}
+
+.contact-icon-section-row {
+    display: flex;
+    align-items: flex-start;
+    gap: 25px;
+    margin-bottom: 15px;
+
+    .contact-icon {
+        width: 25px;
+        height: 25px;
+
+        &.person {
+            background: url("../imgs/person.svg");
+        }
+
+        &.location {
+            background: url("../imgs/location.svg");
+        }
+
+        &.mail {
+            background: url("../imgs/mail.svg");
+        }
+
+        &.linkedIn {
+            background: url("../imgs/linkedin.svg");
+            filter: invert(1);
+            background-size: cover;
+            width: 20px;
+            height: 20px;
+            margin-right: 5px;
+        }
+
+        &.pdf {
+            background: url("../imgs/pdf.svg");
         }
     }
 }
@@ -707,7 +776,7 @@ section:not(#home) {
         padding-left: 10px;
 
         > a {
-            font-weight: 700;
+            font-weight: 500;
             margin-top: 10px;
             display: block;
             color: inherit;
