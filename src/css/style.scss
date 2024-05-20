@@ -649,6 +649,13 @@ section:not(#home) {
     background-position: left;
 }
 
+.usePopcorn {
+    background: url("../imgs/usePopcorn.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: top;
+}
+
 .card-text {
     position: absolute;
     width: 65%;
