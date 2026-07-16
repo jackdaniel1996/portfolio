@@ -20,23 +20,26 @@ body.lightMode #card1 {
   --index: 1;
 }
 body.lightMode #card1 .card-body {
-  background-color: rgb(64, 64, 64);
+  background-color: rgb(63.75, 63.75, 63.75);
 }
 body.lightMode #card2 {
   --index: 2;
 }
 body.lightMode #card2 .card-body {
-  background-color: rgb(128, 128, 128);
+  background-color: rgb(127.5, 127.5, 127.5);
 }
 body.lightMode #card3 {
   --index: 3;
 }
 body.lightMode #card3 .card-body {
-  background-color: rgb(191, 191, 191);
+  background-color: rgb(191.25, 191.25, 191.25);
 }
 body.lightMode #card4 {
   --index: 4;
 }
 body.lightMode #card4 .card-body {
   background-color: rgb(255, 255, 255);
+}
+body.lightMode .hover-gradient:before {
+  background: radial-gradient(400px circle at var(--mouse-x) var(--mouse-y), rgba(255, 113, 82, 0.2), transparent 40%);
 }/*# sourceMappingURL=lightMode.css.map */

@@ -19,7 +19,7 @@ body.lightMode {
         }
 
         .mode-toggle-icon,
-        > div:nth-child(3) a {
+        >div:nth-child(3) a {
             &:hover {
                 color: var(--color-orange);
                 transition: $transition1;
@@ -27,7 +27,7 @@ body.lightMode {
         }
     }
 
-    .skill-list > div {
+    .skill-list>div {
         background: rgba(0, 0, 0, 1);
     }
 
@@ -40,6 +40,14 @@ body.lightMode {
             .card-body {
                 background-color: rgb($brightness, $brightness, $brightness);
             }
+        }
+    }
+
+    .hover-gradient {
+        &:before {
+            background: radial-gradient(400px circle at var(--mouse-x) var(--mouse-y),
+                    rgba(255, 113, 82, 0.2),
+                    transparent 40%);
         }
     }
 }

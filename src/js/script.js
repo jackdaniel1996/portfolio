@@ -33,6 +33,8 @@ function start() {
     toggleNavbarClass();
     gradientHover();
     anchorScroll();
+    // slider initialisieren
+    document.querySelectorAll('.slider').forEach(initSlider);
 
     const burger = document.querySelector(".burger-menu");
     const headline = document.querySelectorAll("section .section-headline");
@@ -178,4 +180,54 @@ function showMore(btn, target) {
         overlay.parentElement.setAttribute("data-expanded", 1);
         btn.innerHTML = hide;
     }
+}
+
+function initSlider(sliderEl) {
+    const slidesEl = sliderEl.querySelector('.slides');
+    const slides = slidesEl.querySelectorAll('img');
+    const dotsEl = sliderEl.querySelector('.dots');
+    const prevBtn = sliderEl.querySelector('.prev');
+    const nextBtn = sliderEl.querySelector('.next');
+
+    let current = 0;
+    const total = slides.length;
+
+    // Dots erzeugen
+    slides.forEach((_, i) => {
+      const dot = document.createElement('button');
+      dot.classList.add('dot');
+      if (i === 0) dot.classList.add('active');
+      dot.addEventListener('click', () => goToSlide(i));
+      dotsEl.appendChild(dot);
+    });
+    const dots = dotsEl.querySelectorAll('.dot');
+
+    function updateSlider() {
+      slidesEl.style.transform = `translateX(-${current * 100}%)`;
+      dots.forEach((dot, i) => dot.classList.toggle('active', i === current));
+    }
+
+    function goToSlide(index) {
+      current = (index + total) % total;
+      updateSlider();
+    }
+
+    prevBtn.addEventListener('click', () => goToSlide(current - 1));
+    nextBtn.addEventListener('click', () => goToSlide(current + 1));
+
+    // Automatisches Weiterschalten
+    let autoplay = setInterval(() => goToSlide(current + 1), 4000);
+
+    // Autoplay pausieren bei Hover (nur für diesen Slider)
+    sliderEl.addEventListener('mouseenter', () => clearInterval(autoplay));
+    sliderEl.addEventListener('mouseleave', () => {
+      autoplay = setInterval(() => goToSlide(current + 1), 4000);
+    });
+
+    // Tastatursteuerung nur, wenn dieser Slider fokussiert/gehovert ist
+    sliderEl.setAttribute('tabindex', '0'); // damit der Slider fokussierbar ist
+    sliderEl.addEventListener('keydown', (e) => {
+      if (e.key === 'ArrowLeft') goToSlide(current - 1);
+      if (e.key === 'ArrowRight') goToSlide(current + 1);
+    });
 }

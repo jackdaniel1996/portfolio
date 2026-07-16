@@ -80,7 +80,7 @@ body {
 }
 
 .hover-gradient:before {
-  background: radial-gradient(400px circle at var(--mouse-x) var(--mouse-y), rgba(255, 255, 255, 0.06), transparent 40%);
+  background: radial-gradient(400px circle at var(--mouse-x) var(--mouse-y), rgba(255, 113, 82, 0.06), transparent 40%);
   z-index: 3;
   content: "";
   height: 100%;
@@ -105,6 +105,7 @@ body {
   line-height: 18pt;
   letter-spacing: 0.5px;
   transition: all 0.5s ease-in-out;
+  color: var(--color-white);
 }
 .text-block a {
   color: var(--color-orange);
@@ -313,7 +314,7 @@ nav .mode-toggle-icon:hover {
 .scroll-indicator {
   animation: bounce 3s ease infinite;
   bottom: 4rem;
-  color: #fff;
+  color: var(--color-white);
   font-size: 1.5rem;
   height: 4rem;
   left: 50%;
@@ -418,6 +419,7 @@ section#home {
   position: relative;
   top: 100svh;
   background-color: var(--color-bg);
+  transition: all 0.5s ease-in-out;
 }
 
 .content-backdrop {
@@ -459,7 +461,6 @@ section:not(#home) .section-headline {
   font-size: clamp(2rem, 4vw, 5rem);
   white-space: nowrap;
   color: var(--color-white);
-  padding-left: 10px;
   font-family: "Raleway", sans-serif;
   margin-bottom: 50px;
   transition: all 0.5s ease-in-out;
@@ -627,21 +628,21 @@ section:not(#home)#contact-section .section-headline {
   --index: 1;
 }
 #card1 .card-body {
-  background-color: rgb(13, 13, 13);
+  background-color: rgb(12.75, 12.75, 12.75);
 }
 
 #card2 {
   --index: 2;
 }
 #card2 .card-body {
-  background-color: rgb(26, 26, 26);
+  background-color: rgb(25.5, 25.5, 25.5);
 }
 
 #card3 {
   --index: 3;
 }
 #card3 .card-body {
-  background-color: rgb(38, 38, 38);
+  background-color: rgb(38.25, 38.25, 38.25);
 }
 
 #card4 {
@@ -726,4 +727,43 @@ section:not(#home)#contact-section .section-headline {
   display: block;
   color: inherit;
   text-decoration-color: var(--color-orange);
+}
+
+.project-icon-wrapper {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+  padding: 15px 0;
+}
+
+.section-separator {
+  background-color: rgba(255, 255, 255, 0.06);
+  border: 0;
+  height: 1px;
+  max-width: 80%;
+  margin: 50px auto;
+}
+
+.link-button {
+  height: 35px;
+  color: var(--color-white);
+  transition: all 0.5s ease-in-out;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  padding: 5px 20px;
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  font-family: inherit;
+  font-weight: 500;
+  background: rgba(255, 255, 255, 0.02);
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 8px 0px;
+  font-size: 13pt;
+}
+.link-button:hover {
+  color: var(--color-orange);
+  transform: scale(1.1);
+  background: rgba(255, 255, 255, 0.1);
 }/*# sourceMappingURL=style.css.map */

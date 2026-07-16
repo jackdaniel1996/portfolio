@@ -11,9 +11,11 @@ body {
 .light {
     font-weight: 300;
 }
+
 .medium {
     font-weight: 500;
 }
+
 .bold {
     font-weight: 700;
 }
@@ -76,11 +78,9 @@ body {
 
 .hover-gradient {
     &:before {
-        background: radial-gradient(
-            400px circle at var(--mouse-x) var(--mouse-y),
-            rgba(255, 255, 255, 0.06),
-            transparent 40%
-        );
+        background: radial-gradient(400px circle at var(--mouse-x) var(--mouse-y),
+                rgba(255, 113, 82, 0.06),
+                transparent 40%);
         z-index: 3;
         content: "";
         height: 100%;
@@ -98,11 +98,9 @@ body {
     }
 
     &.card:before {
-        background: radial-gradient(
-            400px circle at var(--mouse-x) var(--mouse-y),
-            rgba(255, 113, 82, 0.8),
-            transparent 40%
-        );
+        background: radial-gradient(400px circle at var(--mouse-x) var(--mouse-y),
+                rgba(255, 113, 82, 0.8),
+                transparent 40%);
     }
 }
 
@@ -112,6 +110,7 @@ body {
     line-height: 18pt;
     letter-spacing: 0.5px;
     transition: $transition1;
+    color: var(--color-white);
 
     a {
         color: var(--color-orange);
@@ -162,8 +161,8 @@ body {
     }
 
     @keyframes kreisAnimation {
-        0% {
-        }
+        0% {}
+
         100% {
             width: 0;
             height: 0;
@@ -174,27 +173,35 @@ body {
         0% {
             inset: 0 35px 35px 0;
         }
+
         12.5% {
             inset: 0 35px 0 0;
         }
+
         25% {
             inset: 35px 35px 0 0;
         }
+
         37.5% {
             inset: 35px 0 0 0;
         }
+
         50% {
             inset: 35px 0 0 35px;
         }
+
         62.5% {
             inset: 0 0 0 35px;
         }
+
         75% {
             inset: 0 0 35px 35px;
         }
+
         87.5% {
             inset: 0 0 35px 0;
         }
+
         100% {
             inset: 0 35px 35px 0;
         }
@@ -253,7 +260,7 @@ nav {
     font-size: 13pt;
     font-weight: 500;
 
-    > div {
+    >div {
         width: 33%;
         text-align: center;
 
@@ -347,7 +354,7 @@ nav {
 .scroll-indicator {
     animation: bounce 3s ease infinite;
     bottom: 4rem;
-    color: #fff;
+    color: var(--color-white);
     font-size: 1.5rem;
     height: 4rem;
     left: 50%;
@@ -384,33 +391,43 @@ nav {
     0% {
         transform: translate(0, 0);
     }
+
     10% {
         transform: translate(-5%, -5%);
     }
+
     20% {
         transform: translate(-10%, 5%);
     }
+
     30% {
         transform: translate(5%, -10%);
     }
+
     40% {
         transform: translate(-5%, 15%);
     }
+
     50% {
         transform: translate(-10%, 5%);
     }
+
     60% {
         transform: translate(15%, 0);
     }
+
     70% {
         transform: translate(0, 10%);
     }
+
     80% {
         transform: translate(-15%, 0);
     }
+
     90% {
         transform: translate(10%, 5%);
     }
+
     100% {
         transform: translate(5%, 0);
     }
@@ -444,7 +461,7 @@ nav {
     color: var(--color-white);
     position: relative;
 
-    > div {
+    >div {
         width: 50%;
     }
 }
@@ -460,6 +477,7 @@ section#home {
     position: relative;
     top: 100svh;
     background-color: var(--color-bg);
+    transition: $transition1;
 }
 
 .content-backdrop {
@@ -468,20 +486,16 @@ section#home {
     inset: 0;
     backdrop-filter: blur(40px);
     -webkit-backdrop-filter: blur(40px);
-    mask-image: linear-gradient(
-        rgba(0, 0, 0, 0),
-        rgba(0, 0, 0, 0.5) 10%,
-        rgba(0, 0, 0, 0.8) 20%,
-        rgba(0, 0, 0, 1) 30%,
-        rgb(0, 0, 0)
-    );
-    -webkit-mask-image: linear-gradient(
-        rgba(0, 0, 0, 0),
-        rgba(0, 0, 0, 0.5) 10%,
-        rgba(0, 0, 0, 0.8) 20%,
-        rgba(0, 0, 0, 1) 30%,
-        rgb(0, 0, 0)
-    );
+    mask-image: linear-gradient(rgba(0, 0, 0, 0),
+            rgba(0, 0, 0, 0.5) 10%,
+            rgba(0, 0, 0, 0.8) 20%,
+            rgba(0, 0, 0, 1) 30%,
+            rgb(0, 0, 0));
+    -webkit-mask-image: linear-gradient(rgba(0, 0, 0, 0),
+            rgba(0, 0, 0, 0.5) 10%,
+            rgba(0, 0, 0, 0.8) 20%,
+            rgba(0, 0, 0, 1) 30%,
+            rgb(0, 0, 0));
     height: 260px;
     transform: translate(0, -50%);
     pointer-events: none;
@@ -514,19 +528,19 @@ section:not(#home) {
         font-size: clamp(2rem, 4vw, 5rem);
         white-space: nowrap;
         color: var(--color-white);
-        padding-left: 10px;
+        // padding-left: 10px;
         font-family: $headlineFont;
         margin-bottom: 50px;
         transition: $transition1;
 
-        > span:after {
+        >span:after {
             content: "";
             width: 0%;
             transition: $transition1;
         }
     }
 
-    .inView.section-headline > span {
+    .inView.section-headline>span {
         position: relative;
 
         &:after {
@@ -701,6 +715,7 @@ section:not(#home) {
         --index: #{$i};
 
         $brightness: 5% * $i;
+
         .card-body {
             background-color: rgb($brightness, $brightness, $brightness);
         }
@@ -716,7 +731,7 @@ section:not(#home) {
 
 // skills
 .skill-list {
-    > div {
+    >div {
         display: inline-block;
         color: white;
         padding: 5px 20px;
@@ -783,12 +798,53 @@ section:not(#home) {
         color: #eaeaea;
         padding-left: 10px;
 
-        > a {
+        >a {
             font-weight: 500;
             margin-top: 10px;
             display: block;
             color: inherit;
             text-decoration-color: var(--color-orange);
         }
+    }
+}
+
+.project-icon-wrapper {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+    padding: 15px 0;
+}
+
+.section-separator {
+    background-color: rgba(255, 255, 255, 0.06);
+    border: 0;
+    height: 1px;
+    max-width: 80%;
+    margin: 50px auto;
+}
+
+.link-button {
+    height: 35px;
+    color: var(--color-white);
+    transition: $transition1;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+
+    padding: 5px 20px;
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    font-family: inherit;
+    font-weight: 500;
+    background: rgba(255, 255, 255, 0.02);
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 8px 0px;
+    font-size: 13pt;
+
+    &:hover {
+        color: var(--color-orange);
+        transform: scale(1.1);
+        background: rgba(255, 255, 255, 0.1);
     }
 }
