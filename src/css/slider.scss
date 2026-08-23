@@ -1,4 +1,5 @@
-.slider {
+.slider,
+.projectImgContainer {
     position: relative;
     width: 100%;
     max-width: 90vw;
@@ -9,13 +10,15 @@
     background: #000;
 }
 
-.slides {
+.slides,
+.projectImg {
     display: flex;
     height: 100%;
     transition: transform 0.5s ease-in-out;
 }
 
-.slides img {
+.slides img,
+.projectImg img {
     width: 100%;
     height: 100%;
     object-fit: cover;
